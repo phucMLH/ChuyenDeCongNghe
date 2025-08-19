@@ -1,0 +1,31 @@
+# .gitignore
+
+# Bỏ qua môi trường ảo Python
+.venv/
+venv/
+ENV/
+env/
+.env
+# Bỏ qua file database SQLite
+*.sqlite3
+
+# Bỏ qua các file biên dịch Python
+__pycache__/
+*.py[cod]
+
+# Bỏ qua các file log
+*.log
+
+# Bỏ qua các file tạm thời của hệ điều hành
+.DS_Store
+Thumbs.db
+
+# Bỏ qua các file/mục của IDE
+.vscode/
+.idea/
+
+# Bỏ qua các file migration cũ (nếu muốn)
+# */migrations/*.pyc
+# */migrations/__pycache__/
+
+# Bỏ

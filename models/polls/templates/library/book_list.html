@@ -1,0 +1,19 @@
+<h1>Books</h1>
+<p><a href="{% url 'book_create' %}">+ Add Book</a></p>
+<ul>
+  {% for b in books %}
+  <li>
+    <a href="{% url 'book_detail' b.pk %}">{{ b.title }}</a> — {{ b.author.name
+    }}
+    <form
+      action="{% url 'book_delete' b.pk %}"
+      method="post"
+      style="display: inline"
+    >
+      {% csrf_token %}<button type="submit">Delete</button>
+    </form>
+  </li>
+  {% empty %}
+  <li>No books yet.</li>
+  {% endfor %}
+</ul>

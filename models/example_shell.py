@@ -46,6 +46,8 @@ b1.save()
 Author.objects.filter(books__published_year__gt=1990).distinct()
 
 
+
+
 # Complex Queries Q
 from django.db.models import Q
 

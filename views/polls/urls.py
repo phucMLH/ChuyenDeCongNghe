@@ -11,4 +11,7 @@ urlpatterns = [
     path("forbidden/", views.permission_denied_view, name="forbidden"),
     path("created/", views.created_view, name="created"),
     path("asyncnow/", views.async_current_datetime, name="async_current_datetime"),
+    path("about/", views.AboutView.as_view(), name="about"),
+    path("books/", views.BookListView.as_view(), name="book_list"),
+    path("asyncview/", views.AsyncView.as_view(), name="async_view"),
 ]

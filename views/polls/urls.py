@@ -14,4 +14,6 @@ urlpatterns = [
     path("about/", views.AboutView.as_view(), name="about"),
     path("books/", views.BookListView.as_view(), name="book_list"),
     path("asyncview/", views.AsyncView.as_view(), name="async_view"),
+    path("template-example/", views.example_template_view, name="template_example"),
+    path("outside-template/", views.example_outside_template_view, name="outside_template"),
 ]

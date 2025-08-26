@@ -35,6 +35,20 @@ async def async_current_datetime(request):
     html = f'<html lang="en"><body>It is now {now}.</body></html>'
     return HttpResponse(html)
 
+from django.shortcuts import render
+def example_template_view(request):
+    books = Book.objects.all()
+    context = {
+        'name': 'John Doe',
+        'today': datetime.datetime.now(),
+        'books': books,
+    }
+    return render(request, 'polls/example.html', context)
+
+def example_outside_template_view(request):
+    context = {'name': 'Jane Doe'}
+    return render(request, 'example_outside.html', context)
+
 # Class-based views
 from django.views.generic import TemplateView, ListView
 from django.views import View

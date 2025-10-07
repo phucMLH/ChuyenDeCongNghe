@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Widget",
+    "description": "Hàng demo",
+    "price": "9.99"
+  },
+  {
+    "name": "Gadget",
+    "description": "Gadget demo",
+    "price": "19.99"
+  },
+  {
+    "name": "Thingamajig",
+    "description": "Một món đồ đặc biệt",
+    "price": "29.50"
+  },
+  {
+    "name": "Free sample",
+    "description": "Testing object-level validator (should be price 0)",
+    "price": "0"
+  },
+  {
+    "name": "Budget Widget",
+    "description": "Rẻ và tốt",
+    "price": "4.50"
+  },
+  {
+    "name": "Premium Gadget",
+    "description": "Phiên bản cao cấp",
+    "price": "199.99"
+  },
+  {
+    "name": "Mini Widget",
+    "description": "Kích thước nhỏ gọn",
+    "price": "2.99"
+  },
+  {
+    "name": "Free trial",
+    "description": "Another free item",
+    "price": "0"
+  }
+]

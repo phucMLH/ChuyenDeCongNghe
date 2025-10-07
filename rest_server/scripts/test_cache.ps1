@@ -14,10 +14,18 @@ function Get-List {
     param($label)
     $resp = Invoke-WebRequest -Uri $base -Method Get
     $date = $resp.Headers['Date']
+    $cachedAt = $null
+    if ($resp.Headers['X-Cached-At']) { $cachedAt = $resp.Headers['X-Cached-At'] }
     $body = $resp.Content | ConvertFrom-Json
     $count = if ($body.results) { $body.results.Count } else { ($body | Measure-Object).Count }
-    Write-Host "[$label] Date: $date  | Results count: $count"
-    return @{ date = $date; body = $body }
+    Write-Host "[$label] Date: $date  | X-Cached-At: $cachedAt | Results count: $count"
+    if ($body.results) {
+        Write-Host "  Results (id : name):"
+        foreach ($it in $body.results) {
+            Write-Host "    $($it.id) : $($it.name)"
+        }
+    }
+    return @{ date = $date; cachedAt = $cachedAt; body = $body }
 }
 
 # 1. GET list (initial)
